@@ -1,0 +1,28 @@
+{
+  "author": "Simon Repp <simon@fdpl.io>",
+  "bugs": {
+    "url": "https://github.com/eno-lang/enojs-exploaders/issues"
+  },
+  "description": "Experimental loaders for the enojs library",
+  "devDependencies": {
+    "enojs": "^0.10.1",
+    "jest": "^23.1.0"
+  },
+  "homepage": "https://github.com/eno-lang/enojs-exploaders#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "enojs-exploaders",
+  "keywords": [
+    "eno",
+    "loaders",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eno-lang/enojs-exploaders.git"
+  },
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "version": "0.1.0"
+}
