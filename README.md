@@ -10,6 +10,9 @@ multiple companion packages that are officially provided for use with enojs.
 
 ## The idea in fictional code
 
+Note that this functionality can be easily implemented in about 30 minutes,
+because this is the way the enojs API currently works.
+
 ```js
 const eno = require('enojs');
 const loaders = require('enojs-exploaders');
