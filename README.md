@@ -13,6 +13,9 @@ multiple companion packages that are officially provided for use with enojs.
 Note that this functionality can be easily implemented in about 30 minutes,
 because this is the way the enojs API currently works.
 
+Note also that the part with the boolean loader is now already implemented,
+feel free to try it out! :)
+
 ```js
 const eno = require('enojs');
 const loaders = require('enojs-exploaders');
