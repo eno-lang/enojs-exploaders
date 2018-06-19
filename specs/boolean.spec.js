@@ -17,7 +17,7 @@ describe('boolean', () => {
     });
   });
 
-  describe('true/false', () => {
+  describe('yes/no', () => {
     it("converts 'yes' to true", () => {
       document = eno.parse('boolean: yes');
       expect(document.field('boolean', loaders.boolean)).toBe(true);
@@ -26,6 +26,20 @@ describe('boolean', () => {
     it("converts 'no' to false", () => {
       document = eno.parse('boolean: no');
       expect(document.field('boolean', loaders.boolean)).toBe(false);
+    });
+  });
+
+  describe('sicher', () => {
+    it("throws an error", () => {
+      document = eno.parse('boolean: sicher');
+      expect(() => document.field('boolean', loaders.boolean)).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('yes yes', () => {
+    it("throws an error", () => {
+      document = eno.parse('boolean: yes yes');
+      expect(() => document.field('boolean', loaders.boolean)).toThrowErrorMatchingSnapshot();
     });
   });
 });

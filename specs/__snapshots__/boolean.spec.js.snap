@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`boolean sicher throws an error 1`] = `
+"boolean can only be true/false or yes/no.
+
+   Line | Content
+ >    1 | boolean: sicher
+"
+`;
+
+exports[`boolean yes yes throws an error 1`] = `
+"boolean can only be true/false or yes/no.
+
+   Line | Content
+ >    1 | boolean: yes yes
+"
+`;
