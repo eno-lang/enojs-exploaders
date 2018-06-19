@@ -14,7 +14,9 @@
   "name": "enojs-exploaders",
   "keywords": [
     "eno",
+    "experimental",
     "loaders",
+    "types",
     "validation"
   ],
   "repository": {
@@ -24,5 +26,5 @@
   "scripts": {
     "test": "jest --watch"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

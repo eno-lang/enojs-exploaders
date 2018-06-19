@@ -8,13 +8,10 @@ This project seeks to sketch out a foundational set of loaders that could soon
 be distributed alongside the enojs core library itself, or in the form of one or
 multiple companion packages that are officially provided for use with enojs.
 
-## The idea in fictional code
+## Current functionality draft
 
-Note that this functionality can be easily implemented in about 30 minutes,
-because this is the way the enojs API currently works.
-
-Note also that the part with the boolean loader is now already implemented,
-feel free to try it out! :)
+These three loaders are already implemented as a first draft,
+you can try and use them just like in the example below!
 
 ```js
 const eno = require('enojs');
