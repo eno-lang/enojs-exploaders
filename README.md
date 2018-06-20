@@ -6,12 +6,21 @@ Experimental loaders for the [enojs](https://eno-lang.org/javascript/) library
 
 This project seeks to sketch out a foundational set of loaders that could soon
 be distributed alongside the enojs core library itself, or in the form of one or
-multiple companion packages that are officially provided for use with enojs.
+multiple peer packages that are officially provided for use with enojs.
 
 ## Current functionality draft
 
-These three loaders are already implemented as a first draft,
-you can try and use them just like in the example below!
+These loaders are already implemented as a first draft:
+
+- `loaders.boolean` (accepts `true`, `false`, `yes` and `no`)
+- `loaders.email` (validates the format)
+- `loaders.float`
+- `loaders.integer`
+- `loaders.latLng`
+  - Accepts `dd.dddddd, dd.dddddd`
+  - Returns `{ lat: [float], lng: [float] }`
+
+You can use them with enojs as demonstrated in the example below.
 
 ```js
 const eno = require('enojs');
@@ -33,7 +42,7 @@ doc.field('location', loaders.latLng);
   // }
   
 doc.field('email', loaders.email);
-  // throws an error "Not an email address" through enojs
+  // throws an error "'email' must be an email address" through enojs
 ```
 
 ## Questions to explored
