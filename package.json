@@ -5,7 +5,7 @@
   },
   "description": "Experimental loaders for the enojs library",
   "devDependencies": {
-    "enojs": "^0.10.1",
+    "enojs": "^0.10.4",
     "jest": "^23.1.0"
   },
   "homepage": "https://github.com/eno-lang/enojs-exploaders/",
