@@ -11,6 +11,7 @@ These loaders are already implemented as a first draft:
 - `loaders.email`
 - `loaders.float`
 - `loaders.integer`
+- `loaders.json`
 - `loaders.latLng`
   - Accepts `dd.dddddd, dd.dddddd`
   - Returns `{ lat: [float], lng: [float] }`

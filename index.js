@@ -41,6 +41,14 @@ const integer = ({ name, value }) => {
   return parseInt(value);
 };
 
+const json = ({ name, value }) => {
+  try {
+    return JSON.parse(value);
+  } catch(err) {
+    throw `'${name}' contains invalid json: ${err.message}`;
+  }
+};
+
 const latLng = ({ name, value }) => {
   const match = /(\d+\.\d+),\s*(\d+\.\d+)/.exec(value);
 
@@ -65,6 +73,7 @@ module.exports = {
   email,
   float,
   integer,
+  json,
   latLng,
   number: integer,
   url
