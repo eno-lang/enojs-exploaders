@@ -9,6 +9,14 @@ const boolean = ({ name, value }) => {
   throw `'${name}' can only be true/false or yes/no.`;
 };
 
+const color = ({ name, value }) => {
+  if(!value.match(/^\s*#[0-9a-f]{3}([0-9a-f]{3})?\s*$/i)) {
+    throw `'${name}' must be a color (#RRGGBB or #RGB).`;
+  }
+
+  return value;
+};
+
 const email = ({ name, value }) => {
   if(!value.match(/^\s*[^@\s]+@[^@\s]+\.[^@\s]+\s*$/)) {
     throw `'${name}' must be an email adress.`;
@@ -45,6 +53,7 @@ const latLng = ({ name, value }) => {
 
 module.exports = {
   boolean,
+  color,
   email,
   float,
   integer,

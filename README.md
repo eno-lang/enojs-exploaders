@@ -2,25 +2,26 @@
 
 Experimental loaders for the [enojs](https://eno-lang.org/javascript/) library
 
-## Purpose
-
-This project seeks to sketch out a foundational set of loaders that could soon
-be distributed alongside the enojs core library itself, or in the form of one or
-multiple peer packages that are officially provided for use with enojs.
-
-## Current functionality draft
+## Currently available loaders
 
 These loaders are already implemented as a first draft:
 
 - `loaders.boolean` (accepts `true`, `false`, `yes` and `no`)
-- `loaders.email` (validates the format)
+- `loaders.color` (accepts `#RRGGBB` or `#RGB`)
+- `loaders.email`
 - `loaders.float`
 - `loaders.integer`
 - `loaders.latLng`
   - Accepts `dd.dddddd, dd.dddddd`
   - Returns `{ lat: [float], lng: [float] }`
 
-You can use them with enojs as demonstrated in the example below.
+Note that some loaders only perform validation and return their input unaltered
+as string (e.g. `color`, `email`), while others both validate and transform the
+value into a new type (e.g. `float`, `boolean`) or even object (e.g. `latLng`).
+
+## Example
+
+You can use the loaders with enojs as demonstrated in this example.
 
 ```js
 const eno = require('enojs');
@@ -44,6 +45,12 @@ doc.field('location', loaders.latLng);
 doc.field('email', loaders.email);
   // throws an error "'email' must be an email address" through enojs
 ```
+
+## Purpose
+
+This project seeks to sketch out a foundational set of loaders that could soon
+be distributed alongside the enojs core library itself, or in the form of one or
+multiple peer packages that are officially provided for use with enojs.
 
 ## Questions to explored
 
