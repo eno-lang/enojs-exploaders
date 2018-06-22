@@ -8,9 +8,10 @@
     "enojs": "^0.10.5",
     "jest": "^23.1.0"
   },
+  "files": ["loaders.js"],
   "homepage": "https://github.com/eno-lang/enojs-exploaders/",
   "license": "MIT",
-  "main": "index.js",
+  "main": "loaders.js",
   "name": "enojs-exploaders",
   "keywords": [
     "eno",

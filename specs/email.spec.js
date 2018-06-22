@@ -1,5 +1,5 @@
 const eno = require('enojs');
-const loaders = require('../index.js');
+const loaders = require('../loaders.js');
 
 describe('email', () => {
 
