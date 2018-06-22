@@ -2,6 +2,12 @@
 
 Experimental loaders for the [enojs](https://eno-lang.org/javascript/) library
 
+## Installation
+
+```
+npm install enojs-exploaders
+```
+
 ## Currently available loaders
 
 These loaders are already implemented as a first draft:
