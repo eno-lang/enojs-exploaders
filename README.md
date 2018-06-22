@@ -14,6 +14,8 @@ These loaders are already implemented as a first draft:
 - `loaders.latLng`
   - Accepts `dd.dddddd, dd.dddddd`
   - Returns `{ lat: [float], lng: [float] }`
+- `loaders.number` (alias for `integer`)
+- `loaders.url` (accepts `http(s)://example.com`)
 
 Note that some loaders only perform validation and return their input unaltered
 as string (e.g. `color`, `email`), while others both validate and transform the

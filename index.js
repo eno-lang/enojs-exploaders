@@ -51,6 +51,14 @@ const latLng = ({ name, value }) => {
   return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
 };
 
+const url = ({ name, value }) => {
+  if(!value.match(/^\s*https?:\/\/[^\s.]+\.\S+\s*$/)) {
+    throw `'${name}' must be a url (e.g. should look like http(s)://example.com).`;
+  }
+
+  return value;
+};
+
 module.exports = {
   boolean,
   color,
@@ -58,5 +66,6 @@ module.exports = {
   float,
   integer,
   latLng,
-  number: integer
+  number: integer,
+  url
 };
