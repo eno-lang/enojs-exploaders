@@ -19,6 +19,7 @@ These loaders are already implemented as a first draft:
   - Accepts full dates: `yyyy-mm-dd`, e.g. `1999-12-01`
   - Accepts dates with time: `yyyy-mm-ddThh:mmZ`, e.g. `1994-03-04T13:14Z`
   - Full format documentation see section "Formats" at https://www.w3.org/TR/NOTE-datetime
+  - Returns a JavaScript `Date` object 
 - `loaders.email`
 - `loaders.float`
 - `loaders.integer`
