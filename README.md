@@ -14,6 +14,11 @@ These loaders are already implemented as a first draft:
 
 - `loaders.boolean` (accepts `true`, `false`, `yes` and `no`)
 - `loaders.color` (accepts `#RRGGBB` or `#RGB`)
+- `loaders.datetime`
+  - Accepts partial dates: `yyyy` or `yyyy-mm`, e.g. `2017-03`
+  - Accepts full dates: `yyyy-mm-dd`, e.g. `1999-12-01`
+  - Accepts dates with time: `yyyy-mm-ddThh:mmZ`, e.g. `1994-03-04T13:14Z`
+  - Full format documentation see section "Formats" at https://www.w3.org/TR/NOTE-datetime
 - `loaders.email`
 - `loaders.float`
 - `loaders.integer`

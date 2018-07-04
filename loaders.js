@@ -59,6 +59,27 @@ const latLng = ({ name, value }) => {
   return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
 };
 
+// Format specification thankfully taken from https://www.w3.org/TR/NOTE-datetime
+//
+// 1997
+// 1997-07
+// 1997-07-16
+// 1997-07-16T19:20+01:00
+// 1997-07-16T19:20:30+01:00
+// 1997-07-16T19:20:30.45+01:00
+// 1994-11-05T08:15:30-05:00
+// 1994-11-05T13:15:30Z
+
+const datetime = ({ name, value }) => {
+  const match = /^\s*(\d{4})(?:-(\d\d)(?:-(\d\d)(?:T(\d\d):(\d\d)(?::(\d\d)(?:\.(\d+))?)?(?:(Z)|([+\-])(\d\d):(\d\d)))?)?)?\s*$/.exec(value);
+
+  if(!match) {
+    throw `'${name}' must be a datetime (e.g. 1997-07-16, 1994-11-05T13:15:30Z, see https://www.w3.org/TR/NOTE-datetime)`;
+  }
+
+  return new Date(value);
+};
+
 const url = ({ name, value }) => {
   if(!value.match(/^\s*https?:\/\/[^\s.]+\.\S+\s*$/)) {
     throw `'${name}' must be a url (e.g. should look like http(s)://example.com).`;
@@ -76,5 +97,6 @@ module.exports = {
   json,
   latLng,
   number: integer,
+  datetime,
   url
 };
