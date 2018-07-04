@@ -5,10 +5,12 @@
   },
   "description": "Experimental loaders for the enojs library",
   "devDependencies": {
-    "enojs": "^0.10.5",
-    "jest": "^23.1.0"
+    "enojs": "^0.12.0",
+    "jest": "^23.2.0"
   },
-  "files": ["loaders.js"],
+  "files": [
+    "loaders.js"
+  ],
   "homepage": "https://github.com/eno-lang/enojs-exploaders/",
   "license": "MIT",
   "main": "loaders.js",
