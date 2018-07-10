@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slug loader %eno-lang-article throws an error 1`] = `
+"'value' must be a slug.
+
+   Line | Content
+ >    1 | value: %eno-lang-article
+"
+`;
+
+exports[`slug loader eno lang article throws an error 1`] = `
+"'value' must be a slug.
+
+   Line | Content
+ >    1 | value: eno lang article
+"
+`;
+
+exports[`slug loader eno-lang-article! throws an error 1`] = `
+"'value' must be a slug.
+
+   Line | Content
+ >    1 | value: eno-lang-article!
+"
+`;
+
+exports[`slug loader enö-läng-ärticle throws an error 1`] = `
+"'value' must be a slug.
+
+   Line | Content
+ >    1 | value: enö-läng-ärticle
+"
+`;
+
+exports[`slug loader énó-láng-ártíclé throws an error 1`] = `
+"'value' must be a slug.
+
+   Line | Content
+ >    1 | value: énó-láng-ártíclé
+"
+`;

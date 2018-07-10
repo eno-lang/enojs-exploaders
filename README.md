@@ -10,29 +10,9 @@ npm install enojs-exploaders
 
 ## Currently available loaders
 
-These loaders are already implemented as a first draft:
+These loaders are currently available in the experimental track:
 
-- `loaders.boolean` (accepts `true`, `false`, `yes` and `no`)
-- `loaders.color` (accepts `#RRGGBB` or `#RGB`)
-- `loaders.datetime`
-  - Accepts partial dates: `yyyy` or `yyyy-mm`, e.g. `2017-03`
-  - Accepts full dates: `yyyy-mm-dd`, e.g. `1999-12-01`
-  - Accepts dates with time: `yyyy-mm-ddThh:mmZ`, e.g. `1994-03-04T13:14Z`
-  - Full format documentation see section "Formats" at https://www.w3.org/TR/NOTE-datetime
-  - Returns a JavaScript `Date` object 
-- `loaders.email`
-- `loaders.float`
-- `loaders.integer`
-- `loaders.json`
-- `loaders.latLng`
-  - Accepts `dd.dddddd, dd.dddddd`
-  - Returns `{ lat: [float], lng: [float] }`
-- `loaders.number` (alias for `integer`)
-- `loaders.url` (accepts `http(s)://example.com`)
-
-Note that some loaders only perform validation and return their input unaltered
-as string (e.g. `color`, `email`), while others both validate and transform the
-value into a new type (e.g. `float`, `boolean`) or even object (e.g. `latLng`).
+- `loaders.slug` (accepts only strings using the `0-9A-Za-z_-` set of characters)
 
 ## Example
 
@@ -40,40 +20,32 @@ You can use the loaders with enojs as demonstrated in this example.
 
 ```js
 const eno = require('enojs');
-const loaders = require('enojs-exploaders');
+const { slug } = require('enojs-exploaders');
 
 const doc = eno.parse(`
-  publish: yes
-  location: 36.987094, -25.091719
-  email: contact@faulty
+  good-slug: the-article
+  bad-slug: The Article!
 `);
 
-doc.field('publish', loaders.boolean);
-  // returns true
-  
-doc.field('location', loaders.latLng);
-  // returns {
-  //   lat:  36.987094,
-  //   lng: -25.091719
-  // }
-  
-doc.field('email', loaders.email);
-  // throws an error "'email' must be an email address" through enojs
+doc.field('good-slug', slug);
+  // returns 'the-article'
+
+doc.field('bad-slug', slug);
+  // throws an error "'bad-slug' must be a slug" through enojs
 ```
 
 ## Purpose
 
-This project seeks to sketch out a foundational set of loaders that could soon
-be distributed alongside the enojs core library itself, or in the form of one or
-multiple peer packages that are officially provided for use with enojs.
+Trying out new, innovative, cool and stupid loader ideas and seeing how they fit
+into real life usecases. Based on the findings they might be repackaged, integrated
+into the enojs core, or who knows what!
 
 ## Questions to explored
 
 ### Core loaders
 
-Are there loaders that are so essential that they should be bundled up with the
-enojs library itself? E.g. do we want loaders for basic programming types (string,
-float, int, boolean, Date) to ship out of the box?
+Are there more loaders not yet thought of that are so essential that they should
+be bundled up with the enojs library itself?
 
 ### Translations
 
