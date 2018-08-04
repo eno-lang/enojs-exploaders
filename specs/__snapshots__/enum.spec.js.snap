@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum loader 13 throws an error 1`] = `
+"'value' must be one of 'eno', 'json', 'yaml'.
+
+   Line | Content
+ >    1 | value: 13
+"
+`;
+
+exports[`enum loader YAML throws an error 1`] = `
+"'value' must be one of 'eno', 'json', 'yaml'.
+
+   Line | Content
+ >    1 | value: YAML
+"
+`;
+
+exports[`enum loader car throws an error 1`] = `
+"'value' must be one of 'eno', 'json', 'yaml'.
+
+   Line | Content
+ >    1 | value: car
+"
+`;
