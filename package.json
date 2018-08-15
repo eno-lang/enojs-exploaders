@@ -5,8 +5,8 @@
   },
   "description": "Experimental loaders for the enojs library",
   "devDependencies": {
-    "enojs": "^0.16.0",
-    "jest": "^23.4.2"
+    "enojs": "^0.16.1",
+    "jest": "^23.5.0"
   },
   "files": [
     "loaders.js"
