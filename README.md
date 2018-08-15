@@ -12,8 +12,9 @@ npm install enojs-exploaders
 
 These loaders are currently available in the experimental track:
 
-- `slug` (accepts only strings using the `0-9A-Za-z_-` set of characters)
 - `enum` (generate the loader with `enumFactory(choices)`, the returned loader accepts any of `choices`, returns the value unaltered or throws an error)
+- `htmlEscaped` (encodes & < > " ' / in the input as html entities, so you can e.g. insert the obtained string into HTML output without possible side effects)
+- `slug` (accepts only strings using the `0-9A-Za-z_-` set of characters)
 
 ## Example
 
@@ -21,11 +22,13 @@ You can use the loaders with enojs as demonstrated in this example.
 
 ```js
 const eno = require('enojs');
-const { enumFactory, slug } = require('enojs-exploaders');
+const { enumFactory, htmlEscaped, slug } = require('enojs-exploaders');
 
 const doc = eno.parse(`
   good-slug: the-article
   bad-slug: The Article!
+  
+  html: <script>alert("boom");</script>
   
   good-choice: sunscreen
   bad-choice: motor oil
@@ -37,6 +40,10 @@ doc.field('good-slug', slug);
 
 doc.field('bad-slug', slug);
   // throws an error "'bad-slug' must be a slug" through enojs
+
+
+doc.field('html', htmlEscaped);
+  // returns '&lt;script&gt;alert(&quot;boom&quot;);&lt;&#x2F;script&gt;'
   
   
 const beachItem = enumFactory(['beach ball', 'sunscreen', 'shovel']);  

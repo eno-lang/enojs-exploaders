@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 / `2018-08-15`
+
+#### Added
+
+- Implemented an htmlEscaped loader `facda9c`
+
 ## 0.2.1 / `2018-08-04`
 
 #### Added 
