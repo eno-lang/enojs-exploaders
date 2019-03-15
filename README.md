@@ -2,6 +2,13 @@
 
 Experimental loaders for the [enojs](https://eno-lang.org/javascript/) library
 
+## End of life notice
+
+The eno notation language is en route to its final version and **enojs-exploaders will reach end of life by 2020.**   
+enojs-exploaders is superseded by the [enotype](https://www.npmjs.com/package/enotype) package.
+
+Please visit https://eno-lang.org to read up on all changes.
+
 ## Installation
 
 ```
@@ -27,9 +34,9 @@ const { enumFactory, htmlEscaped, slug } = require('enojs-exploaders');
 const doc = eno.parse(`
   good-slug: the-article
   bad-slug: The Article!
-  
+
   html: <script>alert("boom");</script>
-  
+
   good-choice: sunscreen
   bad-choice: motor oil
 `);
@@ -44,10 +51,10 @@ doc.field('bad-slug', slug);
 
 doc.field('html', htmlEscaped);
   // returns '&lt;script&gt;alert(&quot;boom&quot;);&lt;&#x2F;script&gt;'
-  
-  
+
+
 const beachItem = enumFactory(['beach ball', 'sunscreen', 'shovel']);  
-  
+
 doc.field('good-choice', beachItem);
   // returns 'sunscreen'
 
